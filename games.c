@@ -24,10 +24,19 @@ int main() {
     int count = 0;
     int result;
 
+    // Ensure a file name is given as an argument
+    if (argc < 2) {
+        printf("Error: No file name provided.\n");
+        return 1;
+    }
 
-    printf("Enter file name: ");
-    fgets(fname, sizeof(fname), stdin);//reads file
-    fname[strcspn(fname, "\n")] = '\0';  // Remove newline
+    strncpy(fname, argv[1], sizeof(fname) - 1); // Copy file 
+    fname[sizeof(fname) - 1] = '\0';  // Ensure null-termination
+
+    
+    //printf("Enter file name: ");
+    //fgets(fname, sizeof(fname), stdin);//reads file
+    //fname[strcspn(fname, "\n")] = '\0';  // Remove newline
 
 
     input_file = fopen(fname, "r"); //opens to read the file
