@@ -24,7 +24,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y build-essential
       # Compile the C program (games.c -> game_search executable)
     - name: Compile games.c
-      run: gcc main.c -o main
+      run: gcc games.c -o main
         
     - name: Run C program
       run: ./main
