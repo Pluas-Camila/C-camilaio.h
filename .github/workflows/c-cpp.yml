@@ -24,10 +24,10 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y build-essential
       # Compile the C program (games.c -> game_search executable)
     - name: Compile games.c
-      run: gcc -Wall -g -o game_search games.c
-    - name: Run the executable
-      run: ./game_search video_games.csv
-    - name: run
-      run: ./game_search
+      run: gcc main.c -o main
+        
+    - name: Run C program
+      run: ./main
+      
     - name: Check result file
       run: cat result.csv
