@@ -22,6 +22,10 @@ jobs:
         compiler: gcc-latest
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y build-essential
+      # Compile the C program (games.c -> game_search executable)
+    - name: Compile games.c
+      run: gcc -Wall -g -o game_search games.c
+      
     - name: run
       run: ./game_search
     - name: Check result file
