@@ -25,7 +25,8 @@ jobs:
       # Compile the C program (games.c -> game_search executable)
     - name: Compile games.c
       run: gcc -Wall -g -o game_search games.c
-      
+    - name: Run the executable
+      run: ./game_search video_games.csv
     - name: run
       run: ./game_search
     - name: Check result file
